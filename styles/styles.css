@@ -1,0 +1,254 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+header {
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0px 1px 6px -3px black;
+    z-index: 1;
+}
+
+header h1 {
+    margin: 15px 0 0 0;
+}
+
+header p {
+    margin: 15px 0 20px 0;
+}
+
+h1 .fa {
+    color: #e62117;
+    font-size: 1.3em;
+}
+
+#search-form input {
+    border: 1px solid lightgrey;
+    outline-color: darkgray;
+    width: 260px;
+    height: 30px;
+    border-radius: 3px 0 0 3px;
+    padding-left: 15px;
+}
+
+#search-form button {
+    width: 40px;
+    height: 34px;
+    margin-left: -6px;
+    background-color: #f8f8f8;
+    border: 1px solid lightgray;
+    border-radius: 0 3px 3px 0;
+    color: #717171;
+    outline-color: darkgray;
+}
+
+#search-form button:hover {
+    background-color: #d6d6d6;
+
+}
+
+.search-results {
+    background-color: #f1f1f1;
+    position: absolute;
+    left: 0;
+    top: 125px;
+    height: calc(100vh - 125px);
+    user-select: none;
+}
+
+/*.search-results .transition {
+    transition-property: left;
+    transition-duration: 300ms;
+}*/
+
+.components-page {
+    display: inline-block;
+    box-sizing: border-box;
+    /*border: 1px dashed;*/
+    width: 100vw;
+    text-align: center;
+    margin-right: -5px;
+}
+
+.component-container {
+    width: 200px;
+    height: 300px;
+    position: relative;
+    border: 1px solid rgb(177, 177, 177);
+    box-shadow: 0px 0px 10px -4px black;
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 10px;
+    display: inline-block;
+    background-color: #fff;
+    text-align: left;
+}
+
+.component-container:hover {
+    box-shadow: 0px 0px 16px -3px black;
+}
+
+.img-container {
+    width: 100%;
+    height: 112px;
+    background-color: rgb(167, 167, 167);
+    border-radius: 3px 3px 0 0;
+    position: relative;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+}
+
+.img-container :hover .img-overlay{
+    opacity: 0.9;
+}
+
+.img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.35s ease;
+    background-color: rgba(0, 0, 0, 0.85);
+    text-align: center;
+}
+
+.img-overlay .fa-youtube-play {
+
+    margin-top: 17%;
+    font-size: 2.5em;
+    color: rgba(255, 0, 0, 0.9);
+}
+
+.img-overlay .fa-thumbs-up {
+    font-size: 1.4em;
+    color: rgb(199, 199, 199, 0.9);
+}
+
+.img-overlay p {
+    margin: 0;
+    margin-top: 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(199, 199, 199);
+}
+
+.info-container {
+    position: relative;
+    width: 100%;
+    height: 188px;
+    overflow: hidden;
+    padding: 10px;
+    padding-top: 0;
+    box-sizing: border-box;
+}
+
+.info-container h5 {
+    margin: 0;
+}
+
+.info-container span {
+    font-size: 0.7em;
+    color: #3e3e3e;
+}
+
+.info-container .fa {
+    margin-right: 3px;
+}
+
+.vid-title {
+    text-align: center;
+    margin-top: 6px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    display: -webkit-box;
+}
+
+.vid-title a {
+    color: #167ac6;
+    text-decoration: none;
+}
+
+.vid-title:hover a {
+    text-decoration: underline;
+}
+.vid-title a:visited{
+    color: #5000a5;
+}
+
+.vid-author {
+    margin-top: 8px;
+    color: #525252;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    display: -webkit-box;
+}
+
+.vid-author a {
+    text-decoration: none;
+    color: #525252;
+}
+
+.vid-author a:hover {
+    text-decoration: underline;
+    color: #3e3e3e;
+}
+
+.vid-statistics {
+    margin-top: 4px;
+    max-height: 18px;
+    overflow: hidden;
+}
+
+
+.vid-views {
+    display: inline;
+}
+
+.vid-date {
+    display: inline;
+    float: right;
+    max-width: 48%;
+}
+
+
+.vid-description {
+    height: 95px;
+    margin-top: 8px;
+    border-top: 1px solid rgb(226, 226, 226);
+}
+
+.vid-description p {
+    font-size: 0.8em;
+    margin: 0;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    display: -webkit-box;
+}
+
+
+.hover-panel {
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(113, 0, 255, 0.4);
+}

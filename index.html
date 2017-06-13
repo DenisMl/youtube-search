@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" content='maximum-scale=1.0, user-scalable=0' name='viewport' />
+	<!-- <meta charset="UTF-8" content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' /> -->
+	<title>youtube search</title>
+	<link href="styles/styles.css" rel="stylesheet">
+	<link rel="stylesheet" href="fonts/css/font-awesome.min.css">
+	<script src="https://apis.google.com/js/api.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"></script>
+	<script type="text/template" id="components-page-start-template">
+		<div class="components-page <%=pageNumber%>">
+	</script>
+
+	<script type="text/template" id="components-page-end-template">
+		</div>
+	</script>
+
+	<script type="text/template" id="component-template">
+		<div class="component-container">
+			<div class="img-container">
+				<a href="<%=titleHREF%>">
+					<img src="<%=imgSRC%>" alt="thumbnail">
+					<div class="img-overlay">
+							<i class="fa fa-youtube-play" aria-hidden="true"></i>
+							<p><i class="fa fa-thumbs-up" aria-hidden="true"></i>
+								<span class="vid-likes"><%=likesPercentage%></span>
+							</p>
+					</div>
+				</a>
+			</div>
+			<div class="info-container">
+				<div class="vid-title">
+					<a href="<%=titleHREF%>" title="<%=titleText%>"><h5><%=titleText%></h5></a>
+				</div>
+				<div class="vid-author">
+					<h5><i class="fa fa-user" aria-hidden="true"></i><a href="<%=authorHREF%>"><%=author%></a></h5>
+				</div>
+				<div class="vid-statistics">
+					<div class="vid-views">
+						<span><i class="fa fa-eye" aria-hidden="true"></i><%=views%></span>
+					</div>
+					<div class="vid-date">
+						<span><i class="fa fa-calendar" aria-hidden="true"></i><%=date%></span>
+					</div>
+				</div>
+				<div class="vid-description" title="<%=description%>">
+					<p>
+						<%=description%>
+					</p>
+				</div>
+			</div>
+		</div>
+	</script>
+
+	<script>
+		function start() {
+			gapi.client.init({
+				'apiKey': 'AIzaSyAPnt_YTlH0wGQtBIlRNU7jPih57hfi7WA',
+			}).then(function() {
+				return gapi.client.request({
+					'path': 'https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest',
+				})
+			}).then(function(response) {
+				// console.log('gapi.response');
+				// console.log(response.result);
+			}, function(reason) {
+				console.log('Error: ' + reason.result.error.message);
+			});
+		};
+		gapi.load('client', start);
+	</script>
+
+</head>
+
+<body>
+	<header>
+		<h1>Search on YouTube  <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></h1>
+		<form id="search-form">
+			<p><input id="searchKeyWord" type="text" name="q" placeholder="What are we looking for?">
+				<button type="submit" value=""><i class="fa fa-search" aria-hidden="true"></i></button>
+			</p>
+		</form>
+	</header>
+
+	<div class="search-results" id="searchResults"></div>
+	<!-- <script src="./app.bundle.js"></script> -->
+	<script src="js/main.js"></script>
+	<script src="js/moment.min.js"></script>
+
+</body>
+
+</html>
